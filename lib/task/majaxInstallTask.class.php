@@ -39,9 +39,7 @@ EOF;
     }
     $config->loadYAMLFile($default_config);
 
-    $output = new majaxInstallerOutput($this->dispatcher);
-
-    $installer = new MajaxInstaller($config, $output);
+    $installer = new MajaxInstaller($config);
     $installer->execute();
   }
 }

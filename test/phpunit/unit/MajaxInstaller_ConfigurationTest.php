@@ -31,7 +31,7 @@ FILE;
 
     $conf = array(
       new MajaxInstaller_Configuration_File('assets/databases.yml', 'config/databases.yml', array(
-          new MajaxInstaller_Configuration_File_Tag('string', '##USERNAME##', 'Database Username', 'db_user', true)
+          new MajaxInstaller_Configuration_Tag('string', '##USERNAME##', 'Database Username', 'db_user', true)
         )
       )
     );
