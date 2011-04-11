@@ -1,11 +1,9 @@
 <?php
 require_once dirname(__FILE__).'/../../../../../test/phpunit/bootstrap/unit.php';
 
-require_once dirname(__FILE__).'/../../../vendor/Majax/Installer/Configuration.php';
-require_once dirname(__FILE__).'/../../../vendor/Majax/Installer/Configuration/File.php';
-require_once dirname(__FILE__).'/../../../vendor/Majax/Installer/Configuration/File/Tag.php';
+require_once dirname(__FILE__).'/../bootstrap/MajaxInstaller.php';
 
-class unit_Majax_Installer_ConfigurationTest extends sfPHPUnitBaseTestCase
+class unit_MajaxInstaller_ConfigurationTest extends sfPHPUnitBaseTestCase
 {
   /**
    * @var MajaxInstaller_Configuration

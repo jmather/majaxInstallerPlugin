@@ -1,9 +1,9 @@
 <?php
 require_once dirname(__FILE__).'/../../../../../test/phpunit/bootstrap/unit.php';
 
-require_once dirname(__FILE__).'/../../../vendor/Majax/Installer/Configuration/Validator.php';
+require_once dirname(__FILE__).'/../bootstrap/MajaxInstaller.php';
 
-class unit_Majax_Installer_Configuration_ValidatorTest extends sfPHPUnitBaseTestCase
+class unit_MajaxInstaller_Configuration_ValidatorTest extends sfPHPUnitBaseTestCase
 {
   /**
    * @var MajaxInstaller_Configuration
