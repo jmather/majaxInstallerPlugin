@@ -12,4 +12,14 @@ class Majax_Installer_Output {
   {
     echo $output."\r\n";
   }
+
+  public function askAboutTag(Majax_Installer_Configuration_File_Tag $tag)
+  {
+    $default = '';
+    if ($tag->getDefault() != '')
+    {
+      $default = ' (default: '.$tag->getDefault().')';
+    }
+    $this->printLine($tag->getPrompt().$default);
+  }
 }

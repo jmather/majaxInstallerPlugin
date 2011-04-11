@@ -13,10 +13,17 @@ class Majax_Installer {
    */
   private $configuration;
 
-
+  /**
+   * @var \Majax_Installer_Output
+   */
   private $output;
 
-  public function __construct(Majax_Installer_Configuration $configuration = null, Majax_Installer_Output $output = null)
+  /**
+   * @var \Majax_Installer_Input
+   */
+  private $input;
+
+  public function __construct(Majax_Installer_Configuration $configuration = null, Majax_Installer_Output $output = null, Majax_Installer_Input $input = null)
   {
     if ($configuration !== null)
     {
@@ -30,6 +37,13 @@ class Majax_Installer {
       $this->output = $output;
     } else {
       $this->output = new Majax_Installer_Output();
+    }
+
+    if ($input !== null)
+    {
+      $this->input = $input;
+    } else {
+      $this->input = new Majax_Installer_Input();
     }
   }
 
@@ -47,10 +61,20 @@ class Majax_Installer {
   {
     foreach ($this->configuration->getFiles() as $file)
     {
-      /**
-       * @var Majax_Installer_Configuration_File $file
-       */
-      $this->output->printLine($file->getSource());
+      /** @var $file Majax_Installer_Configuration_File */
+
+      $replace = array();
+
+      foreach($file->getTags() as $tag)
+      {
+        /** @var $tag Majax_Installer_Configuration_File_Tag */
+        $this->output->askAboutTag($tag);
+        $replace[$tag->getHash()] = $this->input->getResponseAboutTag($tag);
+      }
+
+      $content = file_get_contents($file->getSource());
+      $content = str_replace(array_keys($replace), array_values($replace), $content);
+      file_put_contents($file->getDestination(), $content);
     }
   }
 }

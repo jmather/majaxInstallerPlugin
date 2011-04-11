@@ -29,11 +29,6 @@ EOF;
 
   protected function execute($arguments = array(), $options = array())
   {
-    // initialize the database connection
-    $databaseManager = new sfDatabaseManager($this->configuration);
-    $connection = $databaseManager->getDatabase($options['connection'])->getConnection();
-
-    // add your code here
     $config = new majaxInstallerConfigurationYAML();
 
     $default_config = sfConfig::get('sf_root_dir').DIRECTORY_SEPARATOR.'config'.DIRECTORY_SEPARATOR.'installer.yml';

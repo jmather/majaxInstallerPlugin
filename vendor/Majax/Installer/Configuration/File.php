@@ -32,7 +32,8 @@ class Majax_Installer_Configuration_File {
 
   public function setSource($source)
   {
-    if (!file_exists($source))
+    $source = trim($source);
+    if ($source != '' && !file_exists($source))
       throw new InvalidArgumentException($source.' does not exist!');
     $this->source = $source;
   }
@@ -44,8 +45,7 @@ class Majax_Installer_Configuration_File {
 
   public function setDestination($destination)
   {
-    if (!file_exists($destination))
-      throw new InvalidArgumentException($destination.' does not exist!');
+    $destination = trim($destination);
     $this->destination = $destination;
   }
 
