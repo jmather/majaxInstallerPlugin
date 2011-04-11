@@ -21,16 +21,7 @@ class majaxInstallerPluginConfiguration extends sfPluginConfiguration
 
     $base_path = realpath(dirname(__FILE__).DIRECTORY_SEPARATOR.'..').DIRECTORY_SEPARATOR.'vendor'.DIRECTORY_SEPARATOR.'MajaxInstaller';
 
-    $tFunc = function($class_name) use ($base_path)
-    {
-      $rel_path = str_replace('_', DIRECTORY_SEPARATOR, $class_name).'.php';
-      $full_path = $base_path.DIRECTORY_SEPARATOR.$rel_path;
-      if (file_exists($full_path))
-      {
-        require_once $full_path;
-      }
-    };
-
-    spl_autoload_register($tFunc);
+    require_once($base_path.DIRECTORY_SEPARATOR.'MajaxInstaller.php');
+    MajaxInstaller::autoload();
   }
 }
