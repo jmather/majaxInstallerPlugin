@@ -7,7 +7,7 @@
  * To change this template use File | Settings | File Templates.
  */
  
-class majaxInstallerConfigurationYAML extends Majax_Installer_Configuration
+class majaxInstallerConfigurationYAML extends MajaxInstaller_Configuration
 {
   public function loadYAMLFile($file)
   {

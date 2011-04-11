@@ -7,7 +7,7 @@
  * To change this template use File | Settings | File Templates.
  */
  
-class majaxInstallerOutput extends Majax_Installer_Output
+class majaxInstallerOutput extends MajaxInstaller_Output
 {
   /**
    * @var sfEventDispatcher

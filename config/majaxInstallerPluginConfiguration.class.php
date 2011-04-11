@@ -19,7 +19,7 @@ class majaxInstallerPluginConfiguration extends sfPluginConfiguration
   {
     parent::initialize();
 
-    $base_path = realpath(dirname(__FILE__).DIRECTORY_SEPARATOR.'..').DIRECTORY_SEPARATOR.'vendor';
+    $base_path = realpath(dirname(__FILE__).DIRECTORY_SEPARATOR.'..').DIRECTORY_SEPARATOR.'vendor'.DIRECTORY_SEPARATOR.'MajaxInstaller';
 
     $tFunc = function($class_name) use ($base_path)
     {

@@ -6,13 +6,13 @@ require_once dirname(__FILE__).'/../../../vendor/Majax/Installer/Configuration/V
 class unit_Majax_Installer_Configuration_ValidatorTest extends sfPHPUnitBaseTestCase
 {
   /**
-   * @var Majax_Installer_Configuration
+   * @var MajaxInstaller_Configuration
    */
   private $config = null;
 
   public function setUp()
   {
-    $this->validator = new Majax_Installer_Configuration_Validator();
+    $this->validator = new MajaxInstaller_Configuration_Validator();
   }
 
   public function testValidConfiguration()

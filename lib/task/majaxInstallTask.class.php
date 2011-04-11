@@ -41,7 +41,7 @@ EOF;
 
     $output = new majaxInstallerOutput($this->dispatcher);
 
-    $installer = new Majax_Installer($config, $output);
+    $installer = new MajaxInstaller($config, $output);
     $installer->execute();
   }
 }

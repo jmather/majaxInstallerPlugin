@@ -8,13 +8,13 @@ require_once dirname(__FILE__).'/../../../vendor/Majax/Installer/Configuration/F
 class unit_Majax_Installer_ConfigurationTest extends sfPHPUnitBaseTestCase
 {
   /**
-   * @var Majax_Installer_Configuration
+   * @var MajaxInstaller_Configuration
    */
   private $config = null;
 
   public function setUp()
   {
-    $this->config = new Majax_Installer_Configuration();
+    $this->config = new MajaxInstaller_Configuration();
   }
 
   public function testConfigurationLoadingFromXMLString()
@@ -32,8 +32,8 @@ class unit_Majax_Installer_ConfigurationTest extends sfPHPUnitBaseTestCase
 FILE;
 
     $conf = array(
-      new Majax_Installer_Configuration_File('assets/databases.yml', 'config/databases.yml', array(
-          new Majax_Installer_Configuration_File_Tag('string', '##USERNAME##', 'Database Username', 'db_user', true)
+      new MajaxInstaller_Configuration_File('assets/databases.yml', 'config/databases.yml', array(
+          new MajaxInstaller_Configuration_File_Tag('string', '##USERNAME##', 'Database Username', 'db_user', true)
         )
       )
     );
