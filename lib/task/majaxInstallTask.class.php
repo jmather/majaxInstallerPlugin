@@ -34,5 +34,19 @@ EOF;
     $connection = $databaseManager->getDatabase($options['connection'])->getConnection();
 
     // add your code here
+    $config = new majaxInstallerConfigurationYAML();
+
+    $default_config = sfConfig::get('sf_root_dir').DIRECTORY_SEPARATOR.'config'.DIRECTORY_SEPARATOR.'installer.yml';
+    if (!file_exists($default_config))
+    {
+      $this->log('No configuration found at config/installer.yml');
+      return;
+    }
+    $config->loadYAMLFile($default_config);
+
+    $output = new majaxInstallerOutput($this->dispatcher);
+
+    $installer = new Majax_Installer($config, $output);
+    $installer->execute();
   }
 }
