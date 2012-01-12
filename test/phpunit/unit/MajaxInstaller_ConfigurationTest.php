@@ -20,7 +20,7 @@ class unit_MajaxInstaller_ConfigurationTest extends sfPHPUnitBaseTestCase
     $xml = <<<FILE
 <Installer>
   <Files>
-    <File source="assets/databases.yml" destination="config/databases.yml">
+    <File source="assets/config/databases.yml" destination="config/databases.yml">
       <Tags>
         <Tag type="string" hash="##USERNAME##" prompt="Database Username" default="db_user" required="true" />
       </Tags>
@@ -30,7 +30,7 @@ class unit_MajaxInstaller_ConfigurationTest extends sfPHPUnitBaseTestCase
 FILE;
 
     $conf = array(
-      new MajaxInstaller_Configuration_File('assets/databases.yml', 'config/databases.yml', array(
+      new MajaxInstaller_Configuration_File('assets/config/databases.yml', 'config/databases.yml', array(
           new MajaxInstaller_Configuration_Tag('string', '##USERNAME##', 'Database Username', 'db_user', true)
         )
       )
